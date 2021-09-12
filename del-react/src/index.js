@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-
 import Header from "./components/Header";
 import SampleCreateElement from "./components/CreateElementSample";
 import SampleComponent from "./components/ComponentSample";

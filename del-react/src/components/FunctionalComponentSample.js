@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 /**
  * sample content
  * <div>
@@ -10,9 +9,7 @@ import React, { useState } from "react";
  */
 const FunctionComponentSample = () => {
   const [count, setCount] = useState(0);
-
   const handleIncrement = () => setCount((currentCount) => currentCount + 1);
-
   const handleDecrement = () => setCount((currentCount) => currentCount - 1);
 
   return (

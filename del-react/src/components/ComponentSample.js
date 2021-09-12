@@ -1,5 +1,4 @@
 import React from "react";
-
 /**
  * sample content
  * <div>
@@ -30,8 +29,8 @@ class SampleComponent extends React.Component {
     return (
       <div className="counter-container component-box">
         <h2>React.Component</h2>
-        <button onClick={this.handleDecrement}>--</button>
-        <button onClick={this.handleIncrement}>++</button>
+        <button onClick={this.handleDecrement}>Decrement</button>
+        <button onClick={this.handleIncrement}>Increment</button>
         <p>{this.state.num}</p>
       </div>
     );

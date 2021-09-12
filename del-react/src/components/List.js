@@ -1,8 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
-
-import logo from "./logo.svg";
-import "./App.css";
 
 function toggleOpen(elem) {
   elem.preventDefault();
@@ -14,67 +10,10 @@ function toggleOpen(elem) {
   document.getElementById(`${target}`).style.display = "block";
 }
 
-/**
- *
- *  createElement
- *
- */
-
-const el = React.createElement;
-
-function Button(props) {
-  return el("button", { onClick: props.handleClick }, props.name);
-}
-
-class Counter extends React.Component {
-  state = {
-    num: 0,
-  };
-
-  handleIncrement = () => {
-    this.setState({
-      num: this.state.num + 1,
-    });
-  };
-
-  handleDecrement = () => {
-    this.setState({
-      num: this.state.num - 1,
-    });
-  };
-
-  render() {
-    return el(
-      "div",
-      null,
-      el(
-        Button,
-        { handleClick: this.handleIncrement, name: "Increment" },
-        null
-      ),
-      el(
-        Button,
-        { handleClick: this.handleDecrement, name: "Decrement" },
-        null
-      ),
-      el("p", null, this.state.num)
-    );
-  }
-}
-
-ReactDOM.render(
-  el(Counter, null, null),
-  document.querySelector("#createElement .content")
-);
-
-function App() {
+function List() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>React Learning - Core Concepts - Home Task 1</h1>
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <section className="App-Content">
+    <div className="selector-container">
+      <section className="App-List">
         <div className="list">
           <p>
             <a href="#createElement" onClick={toggleOpen}>
@@ -118,4 +57,4 @@ function App() {
   );
 }
 
-export default App;
+export default List;

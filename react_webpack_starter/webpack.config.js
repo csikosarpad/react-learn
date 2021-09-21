@@ -1,24 +1,14 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
-module.exports = {
+const config = {
   entry: "./src/index.js",
-  output: {
-    path: path.join(__dirname, "/dist"),
-    filename: "index_bundle.js",
-  },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
   module: {
     rules: [
-      /*{
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
-      },*/
       {
         test: /\.tsx?$/,
         loader: "awesome-typescript-loader",
@@ -38,4 +28,38 @@ module.exports = {
       template: "./src/index.html",
     }),
   ],
+};
+
+module.exports = (env, argv) => {
+  const environment = argv.mode || process.env.NODE_ENV;
+
+  if (environment === "production") {
+    config.output = {
+      path: path.join(__dirname, "/dist"),
+      filename: "index.js",
+    };
+
+    config.optimization = {
+      minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            format: {
+              comments: false,
+            },
+          },
+          extractComments: false,
+        }),
+      ],
+    };
+  }
+
+  if (environment === "development") {
+    config.output = {
+      path: path.join(__dirname, "/dist"),
+      filename: "index_bundle.js",
+    };
+  }
+
+  return config;
 };

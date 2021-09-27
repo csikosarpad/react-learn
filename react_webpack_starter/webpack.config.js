@@ -30,7 +30,7 @@ const config = {
   ],
 };
 
-module.exports = (env, argv) => {
+module.exports = (argv) => {
   const environment = argv.mode || process.env.NODE_ENV;
 
   if (environment === "production") {

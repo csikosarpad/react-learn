@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Pulp Fiction",
+    "type": "Action &Adventure",
+    "year": 2004
+  },
+  {
+    "title": "Bohemian Rhapsody",
+    "type": "Drama, Biography, Music",
+    "year": 2019
+  },
+  {
+    "title": "Kill Bill: Vol 1",
+    "type": "Oscar winning Movie",
+    "year": 2003
+  },
+  {
+    "title": "Kill Bill: Vol 2",
+    "type": "Oscar winning Movie",
+    "year": 2004
+  }
+]

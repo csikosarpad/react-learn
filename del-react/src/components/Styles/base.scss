@@ -39,10 +39,11 @@ body {
       .results {
         display: flex;
         justify-content: space-between;
-        column-count: 3;
+        flex-wrap: wrap;
 
         .movie-card {
-          outline: 1px solid red;
+          row-gap: 20px;
+          width: 33%;
         }
       }
     }

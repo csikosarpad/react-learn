@@ -2,21 +2,43 @@
   {
     "title": "Pulp Fiction",
     "type": "Action &Adventure",
-    "year": 2004
+    "year": 2004,
+    "img": "movie.jpg"
   },
   {
     "title": "Bohemian Rhapsody",
     "type": "Drama, Biography, Music",
-    "year": 2019
+    "year": 2019,
+    "img": "movie.jpg"
   },
   {
     "title": "Kill Bill: Vol 1",
     "type": "Oscar winning Movie",
-    "year": 2003
+    "year": 2003,
+    "img": "movie2.jpg"
   },
   {
     "title": "Kill Bill: Vol 2",
     "type": "Oscar winning Movie",
-    "year": 2004
-  }
+    "year": 2004,
+    "img": "movie2.jpg"
+  },
+  {
+    "title": "Matrix",
+    "type": "sci-fi, action",
+    "year": 1999,
+    "img": "movie.jpg"
+  },
+  {
+    "title": "The Matrix Reloaded",
+    "type": "sci-fi, action",
+    "year": 2003,
+    "img": "movie.jpg"
+  },
+  {
+    "title": "The Matrix Revolutions",
+    "type": "sci-fi, action",
+    "year": 2004,
+    "img": "movie.jpg"
+  }  
 ]

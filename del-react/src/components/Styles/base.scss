@@ -23,18 +23,88 @@ body {
       margin-bottom: 10px;
       background-color: $page-bgcolor;
 
-      h1 {
+      h1,
+      h2 {
         padding: 0;
+        margin: 0;
         line-height: 1;
+      }
+
+      h1 {
         font-size: 20px;
         font-weight: lighter;
         color: $site-red;
+      }
+
+      >.btn {
+        position: absolute;
+        top: 20px;
+        right: 60px;
+      }
+
+      form {
+        display: flex;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        justify-content: space-between;
       }
     }
 
     .results-container {
       padding: 20px 60px;
       background-color: $page-bgcolor;
+
+      .filter-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+
+        .filter {
+          ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-start;
+            align-items: stretch;
+            padding: 0;
+
+            li {
+              a {
+                color: white;
+                display: block;
+                text-decoration: none;
+                text-transform: uppercase;
+                margin-right: 5px;
+              }
+
+              &:last-child {
+                a {
+                  margin-right: 0;
+                }
+              }
+            }
+          }
+        }
+
+        .sortby {
+          ul {
+            list-style-type: none;
+            display: flex;
+            padding: 0;
+
+            select {
+              background-color: transparent;
+              color: #fff;
+              border: 0;
+            }
+          }
+        }
+
+      }
+
+      .resultnum {
+        margin-bottom: 10px;
+        display: inline-block;
+      }
 
       .results {
         display: flex;

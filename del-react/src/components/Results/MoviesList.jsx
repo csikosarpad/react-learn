@@ -11,7 +11,7 @@ class MoviesList extends React.Component {
             title={movie.title}
             type={movie.type}
             year={movie.year}
-            img={movie.img}
+            poster={movie.poster}
           ></MovieCard>
         ))}
       </>

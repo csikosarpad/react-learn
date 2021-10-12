@@ -11,7 +11,7 @@ const Results = ({ moviesdata, actions }) => {
       <section className="results-container">
         <section className="filter-container">
           <ResultsFilter />
-          <SortOrder />
+          <SortOrder data={moviesdata} actions={actions} />
         </section>
         <ResultNumbers counter={moviesdata.length} />
         <section className="results">

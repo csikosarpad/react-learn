@@ -23,6 +23,45 @@ const App = (props) => {
     toggleModal();
   };
 
+  const sortbyTitle = (a, b) => {
+    var nameA = a.title.toUpperCase();
+    var nameB = b.title.toUpperCase();
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+    return 0;
+  };
+  const sortbyDate = (a, b) => {
+    var dateA = a.year;
+    var dateB = b.year;
+    if (dateA < dateB) {
+      return -1;
+    }
+    if (dateA > dateB) {
+      return 1;
+    }
+    return 0;
+  };
+
+  const sortItems = (item) => {
+    console.log(item);
+    switch (item) {
+      case "releasedate":
+        setMoviesData((moviesData) => {
+          return moviesData.sort(sortbyDate);
+        });
+        break;
+      case "movietitle":
+        setMoviesData((moviesData) => {
+          return moviesData.sort(sortbyTitle);
+        });
+        break;
+    }
+  };
+
   const deleteMovie = (itemId) => {
     setModalContent({ action: "delete", title: "Delete Movie" });
     toggleModal();
@@ -35,7 +74,7 @@ const App = (props) => {
   return (
     <div className="App">
       <Header actions={{ addMovie }} />
-      <Results moviesdata={moviesData} actions={{ deleteMovie }} />
+      <Results moviesdata={moviesData} actions={{ deleteMovie, sortItems }} />
       <Footer>
         <p>
           <b>netflix</b>roulette

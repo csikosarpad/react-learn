@@ -8,8 +8,14 @@ export default class SortOrder extends React.Component {
           <ul>
             <li>
               Sort by:
-              <select name="sort">
+              <select
+                name="sort"
+                onChange={(select) =>
+                  this.props.actions.sortItems(select.target.value)
+                }
+              >
                 <option value="releasedate">Release date</option>
+                <option value="movietitle">Movie title</option>
               </select>
             </li>
           </ul>

@@ -21,13 +21,13 @@ import ErrorBoundary from "../Tools/ErrorBoundary.jsx";
 }
 */
 
-const DeleteMovie = () => {
+const DeleteMovie = (props) => {
   return (
     <ErrorBoundary>
       <p>Are you sure you want to delete this movie?</p>
       <button
         className="button confirm-button"
-        onClick={() => this.props.actions.confirmDelete()}
+        onClick={() => props.actions.confirmDelete()}
       >
         Confirm
       </button>

@@ -1,4 +1,6 @@
 import React from "react";
+import "./MovieCard.scss";
+
 import PropTypes from "prop-types";
 import ErrorBoundary from "../Tools/ErrorBoundary.jsx";
 
@@ -7,16 +9,26 @@ class MovieCard extends React.Component {
     return (
       <ErrorBoundary>
         <div className="movie-card">
-          <img
-            src={process.env.PUBLIC_URL + "/posters/" + this.props.poster}
-            alt={this.props.title}
-          />
-          <h3>{this.props.title}</h3>
-          <p className="movie-card-title">{this.props.type}</p>
-          <p className="movie-card-year">{this.props.year}</p>
-          <span onClick={() => this.props.actions.deleteMovie(this.props.id)}>
-            X
-          </span>
+          <div className="movie-card-container">
+            <img
+              src={process.env.PUBLIC_URL + "/posters/" + this.props.poster}
+              alt={this.props.title}
+            />
+            <h3>{this.props.title}</h3>
+            <p className="movie-card-title">{this.props.type}</p>
+            <p className="movie-card-year">{this.props.year}</p>
+
+            <span className="movie-card-contextmenu">
+              <span
+                onClick={() => this.props.actions.deleteMovie(this.props.id)}
+              >
+                Delete
+              </span>
+              <span onClick={() => this.props.actions.editMovie(this.props.id)}>
+                Edit
+              </span>
+            </span>
+          </div>
         </div>
       </ErrorBoundary>
     );

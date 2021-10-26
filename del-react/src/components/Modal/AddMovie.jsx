@@ -42,7 +42,7 @@ class AddMovie extends React.Component {
               <input type="text" name="movie-genre" id="movie-genre" />
             </label>
             <label for="movie-runtime">
-              Rating
+              Runtime
               <input type="text" name="movie-runtime" />
             </label>
           </fieldset>

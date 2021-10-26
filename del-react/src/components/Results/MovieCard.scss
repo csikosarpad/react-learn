@@ -1,0 +1,30 @@
+.movie-card {
+    row-gap: 20px;
+    width: 33%;
+    text-align: center;
+
+    .movie-card-container {
+        display: flex;
+        object-fit: cover;
+        height: 400px;
+
+        img {
+            height: 300px;
+        }
+
+        h3 {
+            margin: 0;
+            text-align: left;
+        }
+
+        .movie-card-title {
+            display: block;
+        }
+
+        .movie-card-year {
+            outline: 1px solid white;
+        }
+
+    }
+
+}

@@ -2,50 +2,57 @@
   {
     "id": 1,
     "title": "Pulp Fiction",
-    "type": "Action &Adventure",
-    "year": 2004,
-    "poster": "pulp_fiction.jpg"
+    "genre": "Action &Adventure",
+    "release": 2004,
+    "poster": "pulp_fiction.jpg",
+    "url": "http://"
   },
   {
     "id": 2,
     "title": "Bohemian Rhapsody",
-    "type": "Drama, Biography, Music",
-    "year": 2019,
-    "poster": "bohemian_rhapsody.jpg"
+    "genre": "Drama, Biography, Music",
+    "release": 2019,
+    "poster": "bohemian_rhapsody.jpg",
+    "url": "http://"
   },
   {
     "id": 3,
     "title": "Kill Bill: Vol 1",
-    "type": "Oscar winning Movie",
-    "year": 2003,
-    "poster": "kill_bill_1.jpg"
+    "genre": "Oscar winning Movie",
+    "release": 2003,
+    "poster": "kill_bill_1.jpg",
+    "url": "http://"
   },
   {
     "id": 4,
     "title": "Kill Bill: Vol 2",
-    "type": "Oscar winning Movie",
-    "year": 2004,
-    "poster": "kill_bill_2.jpg"
+    "genre": "Oscar winning Movie",
+    "release": 2004,
+    "poster": "kill_bill_2.jpg",
+    "url": "http://"
   },
   {
     "id": 5,
     "title": "Matrix",
-    "type": "sci-fi, action",
-    "year": 1999,
-    "poster": "matrix_1.jpg"
+    "genre": "sci-fi, action",
+    "release": 1999,
+    "poster": "matrix_1.jpg",
+    "url": "http://"
   },
   {
     "id": 6,
     "title": "The Matrix Reloaded",
-    "type": "sci-fi, action",
-    "year": 2003,
-    "poster": "matrix_2.jpg"
+    "genre": "sci-fi, action",
+    "release": 2003,
+    "poster": "matrix_2.jpg",
+    "url": "http://"
   },
   {
     "id": 7,
     "title": "The Matrix Revolutions",
-    "type": "sci-fi, action",
-    "year": 2004,
-    "poster": "matrix_2.jpg"
+    "genre": "sci-fi, action",
+    "release": 2004,
+    "poster": "matrix_2.jpg",
+    "url": "http://"
   }
 ]

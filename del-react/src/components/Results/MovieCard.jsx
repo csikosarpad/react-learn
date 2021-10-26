@@ -19,8 +19,8 @@ const MovieCard = (props) => {
             alt={props.title}
           />
           <h3>{props.title}</h3>
-          <p className="movie-card-title">{props.type}</p>
-          <p className="movie-card-year">{props.year}</p>
+          <p className="movie-card-title">{props.genre}</p>
+          <p className="movie-card-year">{props.release}</p>
 
           <span className="movie-card-contextmenu" onClick={toggleContextMenu}>
             <span
@@ -50,15 +50,15 @@ const MovieCard = (props) => {
 
 MovieCard.propTypes = {
   title: PropTypes.string,
-  type: PropTypes.string,
-  year: PropTypes.number.isRequired,
+  genre: PropTypes.string,
+  release: PropTypes.number.isRequired,
   poster: PropTypes.string,
 };
 
 MovieCard.defaultProps = {
   title: "Movie",
-  type: "movie",
-  year: 2000,
+  genre: "movie",
+  release: 2000,
   poster: "",
 };
 

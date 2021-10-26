@@ -20,8 +20,8 @@ const MoviesList = ({ moviesdata, actions }) => {
           <MovieCard
             key={index}
             title={movie.title}
-            type={movie.type}
-            year={movie.year}
+            genre={movie.genre}
+            release={movie.release}
             poster={movie.poster}
             actions={actions}
             movieId={movie.id}
@@ -36,8 +36,8 @@ MoviesList.propTypes = {
   moviesdata: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
-      type: PropTypes.string.isRequired,
-      year: PropTypes.number.isRequired,
+      genre: PropTypes.string.isRequired,
+      release: PropTypes.number.isRequired,
       poster: PropTypes.string.isRequired,
     })
   ),

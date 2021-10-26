@@ -32,8 +32,8 @@ const App = (props) => {
     return 0;
   };
   const sortbyDate = (a, b) => {
-    var dateA = a.year;
-    var dateB = b.year;
+    var dateA = a.release;
+    var dateB = b.release;
     if (dateA < dateB) {
       return -1;
     }

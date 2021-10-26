@@ -19,7 +19,11 @@ const EditMovie = ({ currentMovie }) => {
           </label>
           <label htmlFor="movie-date">
             Release date
-            <input type="date" name="movie-date" value={currentMovie?.year} />
+            <input
+              type="date"
+              name="movie-date"
+              value={currentMovie?.release}
+            />
           </label>
         </fieldset>
         <fieldset className="fieldset">
@@ -42,7 +46,7 @@ const EditMovie = ({ currentMovie }) => {
           </label>
         </fieldset>
         <fieldset className="fieldset">
-          <label for="movie-genre">
+          <label htmlFor="movie-genre">
             Genre
             <input
               type="text"
@@ -51,7 +55,7 @@ const EditMovie = ({ currentMovie }) => {
               value={currentMovie?.genre}
             />
           </label>
-          <label for="movie-runtime">
+          <label htmlFor="movie-runtime">
             Runtime
             <input
               type="time"
@@ -61,7 +65,7 @@ const EditMovie = ({ currentMovie }) => {
           </label>
         </fieldset>
         <fieldset className="fieldset">
-          <label for="movie-overview" className="full-set">
+          <label htmlFor="movie-overview" className="full-set">
             Overview
             <textarea name="movie-overview" id="movie-overview">
               {currentMovie?.overview}

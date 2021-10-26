@@ -60,9 +60,11 @@ const App = (props) => {
   };
 
   const editMovie = (itemId) => {
+    const currentMovie = moviesData.find((item) => item.id === itemId);
     setModalContent({
       action: "edit",
       title: "Edit Movie",
+      currentMovie: currentMovie,
     });
     toggleModal();
   };

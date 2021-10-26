@@ -9,21 +9,21 @@ class AddMovie extends React.Component {
       <ErrorBoundary>
         <form>
           <fieldset className="fieldset">
-            <label for="movie-title">
+            <label htmlFor="movie-title">
               Title
               <input type="text" name="movie-title" id="movie-title" />
             </label>
-            <label for="movie-date">
+            <label htmlFor="movie-date">
               Release date
               <input type="date" name="movie-date" />
             </label>
           </fieldset>
           <fieldset className="fieldset">
-            <label for="movie-title">
+            <label htmlFor="movie-title">
               Movie url
               <input type="text" name="movie-url" id="movie-url" />
             </label>
-            <label for="movie-title">
+            <label htmlFor="movie-title">
               Rating
               <input
                 type="number"
@@ -37,17 +37,17 @@ class AddMovie extends React.Component {
             </label>
           </fieldset>
           <fieldset className="fieldset">
-            <label for="movie-genre">
+            <label htmlFor="movie-genre">
               Genre
               <input type="text" name="movie-genre" id="movie-genre" />
             </label>
-            <label for="movie-runtime">
+            <label htmlFor="movie-runtime">
               Runtime
-              <input type="text" name="movie-runtime" />
+              <input type="time" name="movie-runtime" />
             </label>
           </fieldset>
           <fieldset className="fieldset">
-            <label for="movie-overview" className="full-set">
+            <label htmlFor="movie-overview" className="full-set">
               Overview
               <textarea name="movie-overview" id="movie-overview"></textarea>
             </label>

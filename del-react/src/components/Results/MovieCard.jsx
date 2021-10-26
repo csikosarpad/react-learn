@@ -1,39 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MovieCard.scss";
 
 import PropTypes from "prop-types";
 import ErrorBoundary from "../Tools/ErrorBoundary.jsx";
 
-class MovieCard extends React.Component {
-  render() {
-    return (
-      <ErrorBoundary>
-        <div className="movie-card">
-          <div className="movie-card-container">
-            <img
-              src={process.env.PUBLIC_URL + "/posters/" + this.props.poster}
-              alt={this.props.title}
-            />
-            <h3>{this.props.title}</h3>
-            <p className="movie-card-title">{this.props.type}</p>
-            <p className="movie-card-year">{this.props.year}</p>
+const MovieCard = (props) => {
+  const [showContextMenu, setShowContextMenu] = useState(false);
+  const toggleContextMenu = (e) => {
+    setShowContextMenu((show) => !show);
+  };
 
-            <span className="movie-card-contextmenu">
+  return (
+    <ErrorBoundary>
+      <div className="movie-card">
+        <div className="movie-card-container">
+          <img
+            src={process.env.PUBLIC_URL + "/posters/" + props.poster}
+            alt={props.title}
+          />
+          <h3>{props.title}</h3>
+          <p className="movie-card-title">{props.type}</p>
+          <p className="movie-card-year">{props.year}</p>
+
+          <span className="movie-card-contextmenu" onClick={toggleContextMenu}>
+            <span
+              className="movie-card-contextmenu-content"
+              show={showContextMenu}
+            >
               <span
-                onClick={() => this.props.actions.deleteMovie(this.props.id)}
+                className="movie-card-button"
+                onClick={() => props.actions.deleteMovie(props.movieId)}
               >
                 Delete
               </span>
-              <span onClick={() => this.props.actions.editMovie(this.props.id)}>
+              <span
+                className="movie-card-button"
+                onClick={() => props.actions.editMovie(props.movieId)}
+              >
                 Edit
               </span>
+              <span className="movie-card-contextmenu-close">x</span>
             </span>
-          </div>
+          </span>
         </div>
-      </ErrorBoundary>
-    );
-  }
-}
+      </div>
+    </ErrorBoundary>
+  );
+};
 
 MovieCard.propTypes = {
   title: PropTypes.string,

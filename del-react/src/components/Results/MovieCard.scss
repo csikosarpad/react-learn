@@ -4,9 +4,9 @@
     text-align: center;
 
     .movie-card-container {
-        display: flex;
         object-fit: cover;
         height: 400px;
+        position: relative;
 
         img {
             height: 300px;
@@ -23,6 +23,28 @@
 
         .movie-card-year {
             outline: 1px solid white;
+        }
+
+        .movie-card-contextmenu {
+            position: absolute;
+            top: 10px;
+            right: 10%;
+            visibility: hidden;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+
+            .movie-card-contextmenu-content {
+                display: flex;
+                background-color: #000;
+            }
+        }
+
+        &:hover {
+            .movie-card-contextmenu {
+                visibility: visible;
+            }
         }
 
     }

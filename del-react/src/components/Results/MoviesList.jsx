@@ -24,7 +24,7 @@ const MoviesList = ({ moviesdata, actions }) => {
             year={movie.year}
             poster={movie.poster}
             actions={actions}
-            id={movie.id}
+            movieId={movie.id}
           ></MovieCard>
         ))}
       </React.Suspense>

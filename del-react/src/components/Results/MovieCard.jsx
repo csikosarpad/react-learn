@@ -13,7 +13,10 @@ const MovieCard = (props) => {
   return (
     <ErrorBoundary>
       <div className="movie-card">
-        <div className="movie-card-container">
+        <div
+          className="movie-card-container"
+          onClick={() => props.actions.showSelectedMovie(props.movieId)}
+        >
           <img
             src={process.env.PUBLIC_URL + "/posters/" + props.poster}
             alt={props.title}

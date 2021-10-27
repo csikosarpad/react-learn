@@ -3,17 +3,19 @@
     "id": 1,
     "title": "Pulp Fiction",
     "genre": "Action &Adventure",
-    "release": 2004,
+    "release": 1994,
     "poster": "pulp_fiction.jpg",
-    "url": "http://"
+    "url": "https://www.imdb.com/title/tt0110912",
+    "overview": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption."
   },
   {
     "id": 2,
     "title": "Bohemian Rhapsody",
     "genre": "Drama, Biography, Music",
-    "release": 2019,
+    "release": 2018,
     "poster": "bohemian_rhapsody.jpg",
-    "url": "http://"
+    "url": "https://www.imdb.com/title/tt1727824/",
+    "overview": "The story of the legendary British rock band Queen and lead singer Freddie Mercury, leading up to their famous performance at Live Aid (1985)."
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "genre": "Oscar winning Movie",
     "release": 2003,
     "poster": "kill_bill_1.jpg",
-    "url": "http://"
+    "url": "https://www.imdb.com/title/tt0266697",
+    "overview": "The lead character, called 'The Bride,' was a member of the Deadly Viper Assassination Squad, led by her lover 'Bill.' Upon realizing she was pregnant with Bill's child, 'The Bride' decided to escape her life as a killer. She fled to Texas, met a young man, who, on the day of their wedding rehearsal was gunned down by an angry and jealous Bill (with the assistance of the Deadly Viper Assassination Squad). Four years later, 'The Bride' wakes from a coma, and discovers her baby is gone. She, then, decides to seek revenge upon the five people who destroyed her life and killed her baby. The saga of Kill Bill Volume I begins"
   },
   {
     "id": 4,
@@ -29,15 +32,19 @@
     "genre": "Oscar winning Movie",
     "release": 2004,
     "poster": "kill_bill_2.jpg",
-    "url": "http://"
+    "runtime": "2:18",
+    "url": "https://www.imdb.com/title/tt0378194/",
+    "overview": "The murderous Bride is back and she is still continuing her vengeance quest against her ex-boss, Bill, and taking aim at Bill's younger brother Budd and Elle Driver, the only survivors from the squad of assassins who betrayed her four years earlier. It's all leading up to the ultimate confrontation with Bill, the Bride's former master and the man who ordered her execution!"
   },
   {
     "id": 5,
-    "title": "Matrix",
+    "title": "The Matrix",
     "genre": "sci-fi, action",
     "release": 1999,
     "poster": "matrix_1.jpg",
-    "url": "http://"
+    "runtime": "2:16",
+    "url": "https://www.imdb.com/title/tt0133093/",
+    "overview": "Thomas A. Anderson is a man living two lives. By day he is an average computer programmer and by night a hacker known as Neo. Neo has always questioned his reality, but the truth is far beyond his imagination. Neo finds himself targeted by the police when he is contacted by Morpheus, a legendary computer hacker branded a terrorist by the government. As a rebel against the machines, Neo must confront the agents: super-powerful computer programs devoted to stopping Neo and the entire human rebellion"
   },
   {
     "id": 6,
@@ -45,14 +52,18 @@
     "genre": "sci-fi, action",
     "release": 2003,
     "poster": "matrix_2.jpg",
-    "url": "http://"
+    "runtime": "2:18",
+    "url": "https://www.imdb.com/title/tt0234215/",
+    "overview": "In this second adventure, Neo and the rebel leaders estimate that they have 72 hours until Zion falls under siege to the Machine Army. Only a matter of hours separates the last human enclave on Earth from 250,000 Sentinels programmed to destroy mankind. But the citizens of Zion, emboldened by Morpheus conviction that the One will fulfill the Oracles Prophecy and end the war with the Machines, rest all manner of hope and expectation on Neo, who finds himself stalled by disturbing visions as he searches for a course of action."
   },
   {
     "id": 7,
     "title": "The Matrix Revolutions",
     "genre": "sci-fi, action",
     "release": 2004,
-    "poster": "matrix_2.jpg",
-    "url": "http://"
+    "poster": "matrix_3.jpg",
+    "runtime": "2:09",
+    "url": "https://www.imdb.com/title/tt0242653/",
+    "overview": "Neo finds himself trapped between the Matrix and the Real World. Meanwhile, Zion is preparing for the oncoming war with the machines with very little chances of survival. Neo's associates set out to free him from The Merovingian since it's believed that he is the One who will end the war between humans and the machines. What they do not know is that there is a threat from a third party, someone who has plans to destroy both worlds"
   }
 ]

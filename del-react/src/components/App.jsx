@@ -5,11 +5,14 @@ import Header from "./Header/Header.jsx";
 import Results from "./Results/Index.jsx";
 import Footer from "./Footer/Footer.jsx";
 import Modal from "./Modal/index.jsx";
+import MovieDetails from "./MovieDetails/MovieDetails.jsx";
 
 const App = (props) => {
   const [moviesData, setMoviesData] = useState(moviesdata);
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState({});
+  const [showMovieDetails, setShowMovieDetails] = useState(false);
+  const [currentMovie, setCurrentMovie] = useState(null);
 
   const toggleModal = (e) => {
     setShowModal((show) => !show);
@@ -18,6 +21,16 @@ const App = (props) => {
   const addMovie = (e) => {
     setModalContent({ action: "add", title: "Add Movie" });
     toggleModal();
+  };
+
+  const showSelectedMovie = (movieId) => {
+    if (movieId) {
+      const actMovie = moviesData.find((item) => item.id === movieId);
+      setCurrentMovie(actMovie);
+      setShowMovieDetails(true);
+    } else {
+      setShowMovieDetails(false);
+    }
   };
 
   const sortbyTitle = (a, b) => {
@@ -61,6 +74,7 @@ const App = (props) => {
 
   const editMovie = (itemId) => {
     const currentMovie = moviesData.find((item) => item.id === itemId);
+    setCurrentMovie(currentMovie);
     setModalContent({
       action: "edit",
       title: "Edit Movie",
@@ -87,10 +101,16 @@ const App = (props) => {
 
   return (
     <div className="App">
-      <Header actions={{ addMovie }} />
+      {!showMovieDetails && <Header actions={{ addMovie }} />}
+      {showMovieDetails && (
+        <MovieDetails
+          moviesData={currentMovie}
+          actions={{ showSelectedMovie }}
+        />
+      )}
       <Results
         moviesdata={moviesData}
-        actions={{ editMovie, deleteMovie, sortItems }}
+        actions={{ editMovie, deleteMovie, showSelectedMovie, sortItems }}
       />
       <Footer>
         <p>

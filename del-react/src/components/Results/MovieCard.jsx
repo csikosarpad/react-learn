@@ -42,7 +42,6 @@ const MovieCard = (props) => {
               >
                 Edit
               </span>
-              <span className="movie-card-contextmenu-close">x</span>
             </span>
           </span>
         </div>

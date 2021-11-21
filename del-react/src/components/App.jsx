@@ -1,26 +1,36 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Styles/index.scss";
 import moviesdata from "../data/movies.json";
 import Header from "./Header/Header.jsx";
 import Results from "./Results/Index.jsx";
 import Footer from "./Footer/Footer.jsx";
 import Modal from "./Modal/index.jsx";
-import AddMovie from "./Modal/AddMovie";
-import DeleteMovie from "./Modal/DeleteMovie";
-import EditMovie from "./Modal/EditMovie";
+import MovieDetails from "./MovieDetails/MovieDetails.jsx";
 
 const App = (props) => {
   const [moviesData, setMoviesData] = useState(moviesdata);
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState({});
+  const [showMovieDetails, setShowMovieDetails] = useState(false);
+  const [currentMovie, setCurrentMovie] = useState(null);
 
   const toggleModal = (e) => {
-    setShowModal(!showModal);
+    setShowModal((show) => !show);
   };
 
   const addMovie = (e) => {
     setModalContent({ action: "add", title: "Add Movie" });
     toggleModal();
+  };
+
+  const showSelectedMovie = (movieId) => {
+    if (movieId) {
+      const actMovie = moviesData.find((item) => item.id === movieId);
+      setCurrentMovie(actMovie);
+      setShowMovieDetails(true);
+    } else {
+      setShowMovieDetails(false);
+    }
   };
 
   const sortbyTitle = (a, b) => {
@@ -35,8 +45,8 @@ const App = (props) => {
     return 0;
   };
   const sortbyDate = (a, b) => {
-    var dateA = a.year;
-    var dateB = b.year;
+    var dateA = a.release;
+    var dateB = b.release;
     if (dateA < dateB) {
       return -1;
     }
@@ -47,49 +57,67 @@ const App = (props) => {
   };
 
   const sortItems = (item) => {
-    console.log(item);
+    // eslint-disable-next-line default-case
     switch (item) {
       case "releasedate":
         setMoviesData((moviesData) => {
-          return moviesData.sort(sortbyDate);
+          return [...moviesData.sort(sortbyDate)];
         });
         break;
       case "movietitle":
         setMoviesData((moviesData) => {
-          return moviesData.sort(sortbyTitle);
+          return [...moviesData.sort(sortbyTitle)];
         });
         break;
     }
   };
 
-  const deleteMovie = (itemId) => {
-    setModalContent({ action: "delete", title: "Delete Movie" });
-    toggleModal();
-
-    setMoviesData((movieList) => {
-      return movieList.filter((item) => item.id !== itemId);
+  const editMovie = (itemId) => {
+    const currentMovie = moviesData.find((item) => item.id === itemId);
+    setCurrentMovie(currentMovie);
+    setModalContent({
+      action: "edit",
+      title: "Edit Movie",
+      currentMovie: currentMovie,
     });
+    toggleModal();
+  };
+
+  const deleteMovie = (itemId) => {
+    setModalContent({
+      action: "delete",
+      actions: {
+        confirmDelete: () => {
+          setMoviesData((movieList) => {
+            return movieList.filter((item) => item.id !== itemId);
+          });
+          toggleModal();
+        },
+      },
+      title: "Delete Movie",
+    });
+    toggleModal();
   };
 
   return (
     <div className="App">
-      <Header actions={{ addMovie }} />
-      <Results moviesdata={moviesData} actions={{ deleteMovie, sortItems }} />
+      {!showMovieDetails && <Header actions={{ addMovie }} />}
+      {showMovieDetails && (
+        <MovieDetails
+          moviesData={currentMovie}
+          actions={{ showSelectedMovie }}
+        />
+      )}
+      <Results
+        moviesdata={moviesData}
+        actions={{ editMovie, deleteMovie, showSelectedMovie, sortItems }}
+      />
       <Footer>
         <p>
           <b>netflix</b>roulette
         </p>
       </Footer>
-      <Modal
-        onClose={toggleModal}
-        show={showModal}
-        title={modalContent.title}
-        action={modalContent.action}
-      >
-        {modalContent.action === "delete" && <DeleteMovie />}
-        {modalContent.action === "add" && <AddMovie />}
-        {modalContent.action === "edit" && <EditMovie />}
-      </Modal>
+      <Modal {...modalContent} onClose={toggleModal} show={showModal}></Modal>
     </div>
   );
 };

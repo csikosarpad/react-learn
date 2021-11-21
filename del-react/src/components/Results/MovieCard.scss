@@ -1,0 +1,58 @@
+.movie-card {
+    row-gap: 20px;
+    width: 33%;
+    text-align: center;
+
+    .movie-card-container {
+        object-fit: cover;
+        height: 400px;
+        position: relative;
+
+        img {
+            height: 300px;
+        }
+
+        h3 {
+            margin: 0;
+            text-align: left;
+        }
+
+        .movie-card-title {
+            display: block;
+        }
+
+        .movie-card-year {
+            display: inline-flex;
+            outline: 1px solid white;
+        }
+
+        .movie-card-contextmenu {
+            position: absolute;
+            top: 10px;
+            right: 10%;
+            visibility: hidden;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+
+            .movie-card-contextmenu-content {
+                display: flex;
+                flex-wrap: wrap;
+                background-color: #000;
+
+                span {
+                    display: block;
+                }
+            }
+        }
+
+        &:hover {
+            .movie-card-contextmenu {
+                visibility: visible;
+            }
+        }
+
+    }
+
+}

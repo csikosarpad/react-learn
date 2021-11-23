@@ -22,7 +22,7 @@ const MoviesList = ({ moviesdata, actions }) => {
             title={movie.title}
             genre={movie.genre}
             release={movie.release}
-            poster={movie.poster}
+            poster={movie.poster_path}
             actions={actions}
             movieId={movie.id}
           ></MovieCard>

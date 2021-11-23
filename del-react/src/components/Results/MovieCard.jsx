@@ -10,6 +10,14 @@ const MovieCard = (props) => {
     setShowContextMenu((show) => !show);
   };
 
+  const getImage = () => {
+    if (props.poster.indexOf("http") > -1) {
+      return props.poster;
+    } else {
+      return process.env.PUBLIC_URL + "/posters/" + props.poster;
+    }
+  };
+
   return (
     <ErrorBoundary>
       <div className="movie-card">
@@ -17,10 +25,7 @@ const MovieCard = (props) => {
           className="movie-card-container"
           onClick={() => props.actions.showSelectedMovie(props.movieId)}
         >
-          <img
-            src={process.env.PUBLIC_URL + "/posters/" + props.poster}
-            alt={props.title}
-          />
+          <img src={getImage()} alt={props.title} />
           <h3>{props.title}</h3>
           <p className="movie-card-title">{props.genre}</p>
           <p className="movie-card-year">{props.release}</p>
